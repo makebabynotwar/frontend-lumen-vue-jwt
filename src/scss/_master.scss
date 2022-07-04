@@ -1,0 +1,73 @@
+$primary: #049AE3;
+$secondary: #e1e0f1;
+$accent: #4cd863;
+$dark: #3f3d56;
+button,
+textarea,
+input,
+select,
+a,div{
+ -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+ -webkit-tap-highlight-color: transparent;
+ -webkit-user-select: none;
+ -khtml-user-select: none;
+ -moz-user-select: none;
+ -ms-user-select: none;
+  user-select: none;
+}
+
+%shadow{
+	box-shadow:  0 1px 2px 0 rgb(60 64 67 / 30%), 0 2px 6px 2px rgb(60 64 67 / 15%);
+}
+
+%quick-trans{
+  transition: all 0.2s ease;
+} 
+
+%modal {
+  z-index: 100;
+  position: fixed;
+  top:0;
+  left:0;
+  height: 100%;
+  width:100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .backdrop{
+    position: absolute;
+    width: 100%;
+    height:100%;
+    background: rgba(0,0,0,0.5);
+  }
+  .container{
+    @extend %shadow;
+    background:white;
+    border-radius:12px;
+    width:30vw;
+    height:30vh;
+    z-index: 50;
+  }
+}
+
+%button{
+  border: none;
+  padding: 0.8rem 1.4rem;
+  cursor: pointer;
+  @extend %shadow;
+  @extend %quick-trans;
+  &:focus{
+    outline:none;
+  }
+}
+%fadeIn {
+  animation: fadeIn 1s ease-out;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0%;
+  }
+  to {
+    opacity: 100%;
+  }
+}
